@@ -1,0 +1,10 @@
+config:
+  target: 'http://192.168.100.10' # La IP de tu HAProxy
+  phases:
+    - duration: 60      # Duración total de la prueba en segundos
+      arrivalRate: 500   #  usuarios nuevos por segundo
+
+scenarios:
+  - flow:
+      - get:
+          url: '/'      # Ruta a probar (ajusta si es necesario)

@@ -1,0 +1,14 @@
+config:
+  target: "http://192.168.100.10"
+  phases:
+    - duration: 120    # 2 minutos de prueba
+      arrivalRate: 500  # 50 usuarios virtuales por segundo
+      rampTo: 100      # Aumenta gradualmente hasta 100 usuarios/seg
+      name: "Fase de carga creciente"
+    - duration: 60     # 1 minuto de carga máxima
+      arrivalRate: 100 # 100 usuarios virtuales por segundo
+      name: "Fase de carga máxima"
+scenarios:
+  - flow:
+      - get:
+          url: "/"
